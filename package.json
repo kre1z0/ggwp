@@ -1,0 +1,63 @@
+{
+  "name": "ggwp",
+  "homepage": "https://github.com/kre1z0/unknown.git",
+  "description": "unknown",
+  "version": "1.0.0",
+  "author": "Ivchuk Igor",
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "@hot-loader/react-dom": "^16.8.4",
+    "axios": "^0.18.0",
+    "gatsby": "^2.1.34",
+    "lodash": "^4.17.11",
+    "netlify-cms": "^2.6.1",
+    "react": "^16.8.0",
+    "react-autocomplete": "^1.8.1",
+    "react-share": "^2.4.0",
+    "react-swipeable": "^5.2.0",
+    "react-helmet": "^5.2.0",
+    "showdown": "^1.9.0",
+    "styled-components": "^4.2.0",
+    "styled-normalize": "^8.0.6"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^4.1.0",
+    "babel-plugin-styled-components": "^1.10.0",
+    "babel-preset-gatsby": "0.1.10",
+    "gatsby-image": "^2.0.10",
+    "gatsby-plugin-favicon": "^3.1.6",
+    "gatsby-plugin-layout": "1.0.14",
+    "gatsby-plugin-netlify": "^2.0.6",
+    "gatsby-plugin-netlify-cms": "^3.0.15",
+    "gatsby-plugin-react-helmet": "^3.0.4",
+    "gatsby-plugin-react-leaflet": "^2.0.4",
+    "gatsby-plugin-sharp": "^2.0.5",
+    "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-plugin-svgr": "^2.0.1",
+    "gatsby-remark-copy-linked-files": "^2.0.11",
+    "gatsby-remark-images": "^3.0.9",
+    "gatsby-remark-relative-images": "^0.2.0",
+    "gatsby-remark-responsive-iframe": "^2.1.1",
+    "gatsby-source-filesystem": "^2.0.1",
+    "gatsby-transformer-remark": "^2.1.1",
+    "gatsby-transformer-sharp": "^2.1.1",
+    "gh-pages": "^2.0.1",
+    "prettier": "^1.7.4",
+    "rimraf": "^2.6.2"
+  },
+  "keywords": [
+    "gatsby", "twitch", "youtube", "twitter", "react", "styled-components", "cybersport"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "start": "npm run develop",
+    "clean": "rimraf .cache public",
+    "build": "npm run clean && gatsby build",
+    "develop": "npm run clean && gatsby develop",
+    "deploy": "npm run clean && gatsby build --prefix-paths && gh-pages -d public",
+    "serve": "gatsby serve",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
