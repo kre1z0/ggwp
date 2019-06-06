@@ -1,8 +1,6 @@
 import styled, { css } from "styled-components";
 import { Link } from "gatsby";
 
-import { Close } from "../../components/Icons/Close";
-import { IconButton } from "../../components/Buttons/IconButton";
 import { Link as GatsbyLink } from "../../components/Semantic/Link";
 import { Row } from "../../components/NoSemantic/Row";
 
@@ -32,23 +30,6 @@ export const Nav = styled.nav`
 export const Container = styled(Row)`
   display: flex;
   padding: 0 15px;
-`;
-
-export const GoBackBtn = styled(IconButton)`
-  pointer-events: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-`;
-
-export const CloseIcon = styled(Close).attrs(({ fill }) => ({
-  style: {
-    fill,
-  },
-}))`
-  width: 1.2em;
-  height: 1.2em;
 `;
 
 export const Home = styled(Link)`

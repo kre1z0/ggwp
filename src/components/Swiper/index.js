@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 // https://github.com/dogfessional/react-swipeable
 import { Swipeable } from "react-swipeable";
 
 import { getElementWidthAndHeight } from "../../utils/dom";
 
 export class Swiper extends Component {
-  static propTypes = {
-    onSwiped: PropTypes.func,
-    onRef: PropTypes.func,
-  };
-
   swipeableNode = null;
 
   direction(deltaX, deltaY) {

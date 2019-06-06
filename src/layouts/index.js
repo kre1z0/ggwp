@@ -8,15 +8,14 @@ import { Main } from "../components/Semantic/Main";
 
 class Layout extends Component {
   render() {
-    const { children, location, navigate, isHomePage } = this.props;
-    const isLongread = !isHomePage();
+    const { children, location, navigate } = this.props;
 
     return (
       <>
         <Normalize />
-        <GlobalStyle fullHeight={!isLongread} />
-        <Navbar isLongread={isLongread} navigate={navigate} location={location} />
-        <Main fullHeight={!isLongread}>{children}</Main>
+        <GlobalStyle />
+        <Navbar navigate={navigate} location={location} />
+        <Main>{children}</Main>
       </>
     );
   }
