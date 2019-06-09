@@ -7,7 +7,14 @@ import { Navbar } from "../components/Navbar";
 import { Main } from "../components/Semantic/Main";
 
 class Layout extends Component {
+  state = {
+    selectedChannel: null,
+  };
+
+  onSelectedChannel = channel => this.setState({ selectedChannel: channel });
+
   render() {
+    const { selectedChannel } = this.state;
     const { children, location, navigate } = this.props;
 
     return (
@@ -15,7 +22,12 @@ class Layout extends Component {
         <Normalize />
         <GlobalStyle />
         <Navbar navigate={navigate} location={location} />
-        <Main>{children}</Main>
+        <Main>
+          {React.cloneElement(children, {
+            onSelectedChannel: this.onSelectedChannel,
+            selectedChannel,
+          })}
+        </Main>
       </>
     );
   }

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Link } from "gatsby";
 
 import { Link as GatsbyLink } from "../../components/Semantic/Link";
@@ -6,30 +6,17 @@ import { Row } from "../../components/NoSemantic/Row";
 
 export const navbarHeight = "64px";
 
-const fixed = css`
-  background-color: #fff;
-  box-shadow: 0 8px 8px 0 rgba(10, 18, 33, 0.05);
-`;
-
 export const Nav = styled.nav`
-  pointer-events: none;
-  z-index: 999;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   height: ${navbarHeight};
   display: flex;
   align-items: center;
   width: 100%;
   margin: 0 auto;
-  transition: all 200ms ease;
-  ${({ sticky }) => sticky && fixed}
 `;
 
 export const Container = styled(Row)`
   display: flex;
-  padding: 0 15px;
+  width: 60vw;
 `;
 
 export const Home = styled(Link)`
