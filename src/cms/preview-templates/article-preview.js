@@ -12,6 +12,7 @@ const ArticlePreview = ({ entry, widgetFor }) => {
         description={entry.getIn(["data", "description"])}
         preview={entry.getIn(["data", "preview"])}
         content={widgetFor("body")}
+        tags={entry.getIn(["data", "tags"])}
       />
     </PreviewContainer>
   );
