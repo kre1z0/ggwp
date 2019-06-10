@@ -16,7 +16,6 @@ export const Nav = styled.nav`
 
 export const Container = styled(Row)`
   display: flex;
-  width: 60vw;
 `;
 
 export const Home = styled(Link)`

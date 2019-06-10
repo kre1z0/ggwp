@@ -8,14 +8,15 @@
     "@babel/polyfill": "^7.2.5",
     "@hot-loader/react-dom": "^16.8.4",
     "axios": "^0.18.0",
+    "bowser": "^2.4.0",
     "gatsby": "^2.1.34",
     "lodash": "^4.17.11",
     "netlify-cms": "^2.6.1",
     "react": "^16.8.0",
     "react-autocomplete": "^1.8.1",
+    "react-helmet": "^5.2.0",
     "react-share": "^2.4.0",
     "react-swipeable": "^5.2.0",
-    "react-helmet": "^5.2.0",
     "showdown": "^1.9.0",
     "styled-components": "^4.2.0",
     "styled-normalize": "^8.0.6"
@@ -46,7 +47,13 @@
     "rimraf": "^2.6.2"
   },
   "keywords": [
-    "gatsby", "twitch", "youtube", "twitter", "react", "styled-components", "cybersport"
+    "gatsby",
+    "twitch",
+    "youtube",
+    "twitter",
+    "react",
+    "styled-components",
+    "cybersport"
   ],
   "license": "MIT",
   "main": "n/a",

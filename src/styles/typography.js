@@ -28,16 +28,11 @@ const typography = css`
     font-size: 18px;
   }
   p {
-    line-height: 1.6;
-    font-size: 18px;
+    line-height: 1.5;
+    font-size: 16px;
     margin: 30px 0;
     @media (max-width: 991px) {
-      line-height: 1.5;
-      font-size: 16px;
-      margin: 24px 0;
-    }
-    @media (max-width: 812px) and (orientation: landscape),
-      (max-width: 767px) and (orientation: portrait) {
+      line-height: 1.4;
       font-size: 14px;
       margin: 20px 0;
     }
