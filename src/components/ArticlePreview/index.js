@@ -3,7 +3,7 @@ import React from "react";
 import { format } from "../../utils/date";
 import { Figure, PreviewContainer, Preview, Title, Description, Date } from "./styled";
 
-export const Article = ({ preview, title, description, date }) => (
+export const ArticlePreview = ({ preview, title, description, date }) => (
   <Figure>
     <PreviewContainer>
       <Preview src={preview} />

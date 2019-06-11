@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Article } from "../Article";
+import { ArticlePreview } from "../ArticlePreview";
 import { rowColumns } from "../../utils/array";
 import { isMobile } from "../../utils/browser";
 import { Container, Column } from "./styled";
@@ -68,7 +68,7 @@ export class Articles extends Component {
             {!allMarkdownRemark && <h2>Список статей пуст</h2>}
             {col.map((article, index) => (
               // todo add key id
-              <Article key={index} {...article} />
+              <ArticlePreview key={index} {...article} />
             ))}
           </Column>
         ))}

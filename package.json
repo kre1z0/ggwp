@@ -52,12 +52,8 @@
   },
   "keywords": [
     "gatsby",
-    "twitch",
-    "youtube",
-    "twitter",
     "react",
-    "styled-components",
-    "cybersport"
+    "styled-components"
   ],
   "license": "MIT",
   "main": "n/a",
