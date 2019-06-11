@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Article } from "../templates/article";
+import { Article } from "../templates/article-template";
 
 const ArticlePage = () => {
   return (
