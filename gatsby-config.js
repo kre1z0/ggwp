@@ -106,6 +106,7 @@ module.exports = {
         },
       },
     },
+    "gatsby-plugin-react-leaflet",
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
