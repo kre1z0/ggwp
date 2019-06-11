@@ -3,7 +3,7 @@ import React from "react";
 import { isReactElement } from "../utils/dom";
 import { Content, HTMLContent } from "../cms/common/Content";
 import { format } from "../utils/date";
-import { Title, Container, Date, Body, TagsList, Tag } from "../styles/article";
+import { Title, Container, Date, Body, TagsList, Tag } from "../styles/article-styles";
 
 export const Article = ({ title, date, content, tags }) => {
   const BodyContent = isReactElement(content) ? Content : HTMLContent;
