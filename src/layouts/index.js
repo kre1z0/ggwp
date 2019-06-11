@@ -8,14 +8,15 @@ import { Main } from "../components/Semantic/Main";
 
 class Layout extends Component {
   render() {
-    const { children, location, navigate } = this.props;
+    const { children, location, isMapPage, navigate } = this.props;
+    const fullHeight = isMapPage();
 
     return (
       <>
         <Normalize />
-        <GlobalStyle />
+        <GlobalStyle fullHeight={fullHeight} />
         <Navbar navigate={navigate} location={location} />
-        <Main>{children}</Main>
+        <Main fullHeight={fullHeight}>{children}</Main>
       </>
     );
   }

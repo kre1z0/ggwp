@@ -1,8 +1,18 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, css } from "styled-components";
 
 import color from "../styles/colors";
 import typography from "../styles/typography";
 import leaflet from "../styles/leaflet";
+
+const fullHeightCss = css`
+  height: 100%;
+  #___gatsby {
+    height: 100%;
+    > div:first-of-type {
+      height: 100%;
+    }
+  }
+`;
 
 export const GlobalStyle = createGlobalStyle`
   html,
@@ -16,6 +26,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     letter-spacing: 0;
     width: 100%;
+    ${({ fullHeight }) => fullHeight && fullHeightCss};
   }
   img {
     outline: none;

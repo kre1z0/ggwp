@@ -1,4 +1,4 @@
-const pathPrefix = "/unnamed";
+const pathPrefix = "/ggwp";
 
 module.exports = {
   pathPrefix,
@@ -106,7 +106,6 @@ module.exports = {
         },
       },
     },
-    "gatsby-plugin-react-leaflet",
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {

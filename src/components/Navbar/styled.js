@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import { Link as GatsbyLink } from "../../components/Semantic/Link";
 import { Row } from "../../components/NoSemantic/Row";
 
-export const navbarHeight = "64px";
+export const navbarHeight = "44px";
 
 export const Nav = styled.nav`
   height: ${navbarHeight};

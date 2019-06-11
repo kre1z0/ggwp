@@ -1,1 +1,1 @@
-export default [{ name: "youtube" }, { name: "twitch" }];
+export default [{ name: "map" }];
