@@ -1,12 +1,7 @@
 import React from "react";
 
-import articles from "../data/articles";
-import { Articles } from "../components/Articles";
-
 const Index = () => {
-  return (
-    <Articles data={{ allMarkdownRemark: articles }} articlesPerPage={8} />
-  );
+  return <div>ggwp index</div>;
 };
 
 export default Index;
