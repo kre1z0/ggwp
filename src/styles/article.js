@@ -10,8 +10,8 @@ export const Container = styled(Row)``;
 
 export const Date = styled.div`
   font-weight: 600;
-  font-size: 12px;
   color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px;
 `;
 
 export const Body = styled.article``;

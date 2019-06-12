@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { StaticQuery, graphql } from "gatsby";
 import { Normalize } from "styled-normalize";
 
 import withRouter from "../hoc/withRouter";
@@ -12,12 +13,45 @@ class Layout extends Component {
     const fullHeight = isMapPage();
 
     return (
-      <>
-        <Normalize />
-        <GlobalStyle fullHeight={fullHeight} />
-        <Navbar navigate={navigate} location={location} />
-        <Main fullHeight={fullHeight}>{children}</Main>
-      </>
+      <StaticQuery
+        query={graphql`
+          {
+            articles: allMarkdownRemark(
+              sort: { fields: [frontmatter___date], order: [DESC] }
+              filter: { frontmatter: { templateKey: { eq: "article" } } }
+            ) {
+              totalCount
+              edges {
+                node {
+                  id
+                  frontmatter {
+                    templateKey
+                    title
+                    description
+                    preview
+                    tags
+                    date
+                  }
+                }
+              }
+            }
+          }
+        `}
+        render={data => {
+          return (
+            <>
+              <Normalize />
+              <GlobalStyle fullHeight={fullHeight} />
+              <Navbar navigate={navigate} location={location} />
+              <Main fullHeight={fullHeight}>
+                {React.cloneElement(children, {
+                  ...data,
+                })}
+              </Main>
+            </>
+          );
+        }}
+      />
     );
   }
 }

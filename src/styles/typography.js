@@ -30,11 +30,11 @@ const typography = css`
   p {
     line-height: 1.5;
     font-size: 16px;
-    margin: 30px 0;
+    margin: 20px 0;
     @media (max-width: 991px) {
       line-height: 1.4;
       font-size: 14px;
-      margin: 20px 0;
+      margin: 15px 0;
     }
   }
   hr {
@@ -42,8 +42,16 @@ const typography = css`
     text-align: left;
     width: 160px;
     height: 8px;
-    margin: 0;
+    margin: 0 0 10px 0;
     background: ${color.green};
+  }
+
+  code {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace !important;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 4px 8px;
+    background-color: #f8f8f8;
   }
 `;
 

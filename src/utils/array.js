@@ -12,3 +12,6 @@ export const rowColumns = (array, columns) => {
     return p;
   }, col);
 };
+
+export const normalizeData = array =>
+  array.edges.map(({ node }) => ({ id: node.id, ...node.frontmatter }));

@@ -21,9 +21,7 @@ export class Articles extends Component {
     const { data, articlesPerPage } = this.props;
     const columnsCount = isMobile() ? 1 : 2;
     const { currentPage } = this.state;
-    const allMarkdownRemark = data.allMarkdownRemark;
-    // const AllArticles = allMarkdownRemark ? allMarkdownRemark.edges : [];
-    const AllArticles = allMarkdownRemark ? allMarkdownRemark : [];
+    const AllArticles = data ? data : [];
 
     const articles = this.pagination(currentPage);
     const pageCount = Math.ceil(AllArticles.length / articlesPerPage);
@@ -34,9 +32,7 @@ export class Articles extends Component {
 
   pagination = page => {
     const { data, articlesPerPage } = this.props;
-    const allMarkdownRemark = data.allMarkdownRemark;
-    // const AllArticles = allMarkdownRemark ? allMarkdownRemark.edges : [];
-    const AllArticles = allMarkdownRemark ? allMarkdownRemark : [];
+    const AllArticles = data ? data : [];
 
     const from = articlesPerPage * (page - 1);
     const to = from + articlesPerPage;
@@ -59,13 +55,12 @@ export class Articles extends Component {
   render() {
     const { columnsCount, columns, currentPage, pageCount } = this.state;
     const { data } = this.props;
-    const allMarkdownRemark = data.allMarkdownRemark;
 
     return (
       <Container>
         {columns.map((col, index) => (
           <Column key={index} oneColumn={columnsCount === 1}>
-            {!allMarkdownRemark && <h2>Список статей пуст</h2>}
+            {!data && <h2>Список статей пуст</h2>}
             {col.map((article, index) => (
               // todo add key id
               <ArticlePreview key={index} {...article} />

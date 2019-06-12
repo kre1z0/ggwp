@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Article } from "../../templates/article-template";
+import { Article } from "../../templates/article";
 import { PreviewContainer } from "../../components/CmsPreviewContainer/CmsPreviewContainer";
 
 const ArticlePreview = ({ entry, widgetFor }) => {

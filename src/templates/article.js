@@ -12,7 +12,6 @@ export const Article = ({ title, date, content, tags }) => {
     <Container>
       <Title>{title}</Title>
       <Date>{format(date)}</Date>
-      <BodyContent Element={Body} content={content} />
       {tags && (
         <TagsList>
           {tags.map((tag, index) => (
@@ -20,6 +19,7 @@ export const Article = ({ title, date, content, tags }) => {
           ))}
         </TagsList>
       )}
+      <BodyContent Element={Body} content={content} />
     </Container>
   );
 };
