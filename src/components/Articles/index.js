@@ -61,9 +61,8 @@ export class Articles extends Component {
         {columns.map((col, index) => (
           <Column key={index} oneColumn={columnsCount === 1}>
             {!data && <h2>Список статей пуст</h2>}
-            {col.map((article, index) => (
-              // todo add key id
-              <ArticlePreview key={index} {...article} />
+            {col.map(article => (
+              <ArticlePreview key={article.id} {...article} />
             ))}
           </Column>
         ))}

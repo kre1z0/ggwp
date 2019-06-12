@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link as GatsbyLink } from "gatsby";
 
 export const PreviewContainer = styled.div`
   overflow: hidden;
@@ -40,4 +41,8 @@ export const Description = styled.p`
   font-size: 14px;
   line-height: 1.4;
   margin: 10px 0 0 0;
+`;
+
+export const Link = styled(GatsbyLink)`
+  color: inherit;
 `;

@@ -24,6 +24,9 @@ class Layout extends Component {
               edges {
                 node {
                   id
+                  fields {
+                    slug
+                  }
                   frontmatter {
                     templateKey
                     title
