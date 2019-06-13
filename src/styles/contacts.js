@@ -7,7 +7,7 @@ import { Row } from "../components/NoSemantic/Row";
 import { Tags as TagsUI } from "../components/Tags";
 
 export const Container = styled(Row)`
-  margin: 44px auto 0 auto;
+  margin: 44px auto 100px auto;
 `;
 
 export const Tags = styled(TagsUI)`
@@ -25,7 +25,9 @@ export const Photo = styled.img`
   margin-right: 24px;
 `;
 
-export const Name = styled.h1``;
+export const Name = styled.h1`
+  margin-top: 0;
+`;
 
 export const ContactLink = styled.a`
   font-size: 16px;

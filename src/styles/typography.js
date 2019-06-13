@@ -53,6 +53,17 @@ const typography = css`
     padding: 4px 8px;
     background-color: #f8f8f8;
   }
+
+  a {
+    color: ${color.blue};
+    text-decoration: none;
+    font-weight: 600;
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 `;
 
 export default typography;

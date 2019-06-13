@@ -36,7 +36,15 @@ export const SimpleTable = ({ headers, data, cellWidth = [], className }) => {
           <tr key={`project-table-row-${index + 1}`}>
             {Object.keys(item).map((key, i) => (
               <Td key={`${key} tr-${index + 1} td-${i + 1}`} cellWidth={cellWidth[i]}>
-                {getComponent(item, key)}
+                {key === "description" ? (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: item[key],
+                    }}
+                  />
+                ) : (
+                  getComponent(item, key)
+                )}
               </Td>
             ))}
           </tr>

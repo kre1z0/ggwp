@@ -19,19 +19,19 @@ import {
   Table,
 } from "../styles/contacts";
 
-const Contacts = () => {
+const About = () => {
   return (
     <Container>
       <Block>
         <Photo src="https://avatars1.githubusercontent.com/u/10591102?s=460&v=4" alt="photo" />
         <Fields>
-          <Field Icon={Developer} name="profession" value="GIS Front-end developer" />
+          <Field Icon={Developer} name="profession" value="GIS front-end developer" />
           <Field Icon={People} name="company" value="Everpoint" />
           <Field Icon={Location} name="location" value="Ukraine, Khmelnytskyi" />
           <Field Icon={Github} name="github" value="https://github.com/kre1z0" />
           <Tags
             tags={[
-              "react",
+              "react.js",
               "ES6",
               "typescript",
               "git",
@@ -40,11 +40,13 @@ const Contacts = () => {
               "npm",
               "webpack",
               "rollup",
+              "lodash",
               "css",
               "leaflet",
               "canvas",
               "svg",
               "gatsby",
+              "styled-components",
               "netlify-cms",
               "youtube api",
               "twitch api",
@@ -61,7 +63,7 @@ const Contacts = () => {
         <Telegram /> telegram
       </ContactLink>
       <Table
-        cellWidth={[20, 8, 8, 18]}
+        cellWidth={[20, 8, 8, 30]}
         headers={["Проект", "Repo", "Demo", "Технологии", "Описание"]}
         data={projects}
       />
@@ -69,4 +71,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default About;
