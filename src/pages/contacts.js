@@ -6,6 +6,7 @@ import { Developer } from "../components/Icons/Developer";
 import { Github } from "../components/Icons/Github";
 import { Email } from "../components/Icons/Email";
 import { Telegram } from "../components/Icons/Telegram";
+import projects from "../assets/data/projects";
 import {
   Container,
   Tags,
@@ -15,6 +16,7 @@ import {
   ContactLink,
   Fields,
   Field,
+  Table,
 } from "../styles/contacts";
 
 const Contacts = () => {
@@ -58,6 +60,11 @@ const Contacts = () => {
       <ContactLink href="tg://resolve?domain=kreizo">
         <Telegram /> telegram
       </ContactLink>
+      <Table
+        cellWidth={[20, 8, 8, 18]}
+        headers={["Проект", "Repo", "Demo", "Технологии", "Описание"]}
+        data={projects}
+      />
     </Container>
   );
 };

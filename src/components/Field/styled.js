@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import colors from "../../styles/colors";
+import { OutsideLink } from "../../components/Semantic/Link";
 
 export const FieldContainer = styled.div`
   display: flex;
@@ -19,12 +19,6 @@ export const Value = styled.div`
   width: 60%;
 `;
 
-export const Link = styled(Value)`
-  text-decoration: none;
-  color: ${colors.blue};
-  @media (hover: hover) {
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+export const Link = styled(OutsideLink)`
+  width: 60%;
 `;

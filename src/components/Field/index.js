@@ -11,7 +11,7 @@ export const Field = React.memo(({ name, value, className, Icon }) => {
       {Icon && <Icon />}
       <Name withIcon={Icon}>{name}</Name>
       {isHttp ? (
-        <Link as="a" href={trimedUrl} target="_blank">
+        <Link href={trimedUrl}>
           {trimedUrl.replace(/^(https?:\/\/)?(www?\.)?/, "")}
         </Link>
       ) : (

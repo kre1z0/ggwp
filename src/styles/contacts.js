@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import { SimpleTable } from "../components/SimpleTable";
 import { Field as FieldUI } from "../components/Field";
 import { Name as FieldName } from "../components/Field/styled";
 import { Row } from "../components/NoSemantic/Row";
@@ -55,4 +56,8 @@ export const Field = styled(FieldUI)`
   ${FieldName} {
     width: 24%;
   }
+`;
+
+export const Table = styled(SimpleTable)`
+  margin-top: 20px;
 `;

@@ -1,6 +1,5 @@
 import React from "react";
 
-import color from "../../styles/colors";
 import menu from "../../routes";
 import withRouter from "../../hoc/withRouter";
 import { Home as HomeIcon } from "../../components/Icons/Home";
@@ -15,7 +14,7 @@ export const NavbarBase = () => {
       <Ul>
         {menu.map(({ name, to }) => (
           <Li key={name}>
-            <DefaultLink to={to} activeStyle={{ color: color.green, cursor: "default" }}>
+            <DefaultLink to={to} activeStyle={activeStyle}>
               {name}
             </DefaultLink>
           </Li>
