@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { ArticlePreview } from "../ArticlePreview";
 import { rowColumns } from "../../utils/array";
 import { isMobile } from "../../utils/browser";
-import { Container, Column } from "./styled";
+import { Container, Column, PaginationFull, PaginationSimple } from "./styled";
 
 export class Articles extends Component {
   state = {
@@ -66,6 +66,21 @@ export class Articles extends Component {
             ))}
           </Column>
         ))}
+        {pageCount > 1 && (
+          <>
+            <PaginationFull
+              currentPage={currentPage}
+              pageCount={pageCount}
+              slots={7}
+              onPageChange={this.onPageChange}
+            />
+            <PaginationSimple
+              pageCount={pageCount}
+              currentPage={currentPage}
+              onPageChange={this.onPageChange}
+            />
+          </>
+        )}
       </Container>
     );
   }

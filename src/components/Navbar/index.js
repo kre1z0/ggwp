@@ -3,23 +3,24 @@ import React from "react";
 import color from "../../styles/colors";
 import menu from "../../routes";
 import withRouter from "../../hoc/withRouter";
-import { Nav, Container, Home, Ul, Li, DefaultLink } from "./styled";
+import { Home as HomeIcon } from "../../components/Icons/Home";
+import { Nav, Home, Ul, Li, DefaultLink, activeStyle } from "./styled";
 
 export const NavbarBase = () => {
   return (
     <Nav>
-      <Container>
-        <Home to="/">Home</Home>
-        <Ul>
-          {menu.map(({ name }) => (
-            <Li key={name}>
-              <DefaultLink to={`/${name}`} activeStyle={{ color: color.green }}>
-                {name}
-              </DefaultLink>
-            </Li>
-          ))}
-        </Ul>
-      </Container>
+      <Home to="/" activeStyle={activeStyle}>
+        <HomeIcon />
+      </Home>
+      <Ul>
+        {menu.map(({ name, to }) => (
+          <Li key={name}>
+            <DefaultLink to={to} activeStyle={{ color: color.green, cursor: "default" }}>
+              {name}
+            </DefaultLink>
+          </Li>
+        ))}
+      </Ul>
     </Nav>
   );
 };

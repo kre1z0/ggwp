@@ -1,1 +1,1 @@
-export default [{ name: "map" }];
+export default [{ name: "карта", to: "/map" }];

@@ -1,28 +1,43 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
 
+import color from "../../styles/colors";
 import { Link as GatsbyLink } from "../../components/Semantic/Link";
-import { Row } from "../../components/NoSemantic/Row";
 
 export const navbarHeight = "44px";
 
+export const activeStyle = {
+  color: color.green,
+  cursor: "default",
+};
+
 export const Nav = styled.nav`
+  z-index: 999;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: ${navbarHeight};
   display: flex;
   align-items: center;
-  width: 100%;
-  margin: 0 auto;
-`;
-
-export const Container = styled(Row)`
-  display: flex;
+  justify-content: flex-start;
 `;
 
 export const Home = styled(Link)`
-  pointer-events: auto;
-  width: 144px;
+  margin: 0 15px;
+  color: inherit;
+  text-decoration: none;
   height: 100%;
-  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: all 200ms ease;
+  @media (hover: hover) {
+    &:hover {
+      color: #90c53d;
+    }
+  }
 `;
 
 export const Ul = styled.ul`
@@ -43,4 +58,11 @@ export const Li = styled.li`
   }
 `;
 
-export const DefaultLink = styled(GatsbyLink)``;
+export const DefaultLink = styled(GatsbyLink)`
+  transition: all 200ms ease;
+  @media (hover: hover) {
+    &:hover {
+      color: #90c53d;
+    }
+  }
+`;

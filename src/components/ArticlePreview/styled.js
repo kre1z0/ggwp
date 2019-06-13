@@ -44,5 +44,6 @@ export const Description = styled.p`
 `;
 
 export const Link = styled(GatsbyLink)`
+  text-decoration: none;
   color: inherit;
 `;

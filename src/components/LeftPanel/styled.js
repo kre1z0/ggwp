@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { IconButton } from "../../components/Buttons/IconButton";
 import { Swiper } from "../../components/Swiper";
 
+export const LeftPanelWidth = "400px";
+
 export const LeftPanelContainer = styled(props => <Swiper {...props} />).attrs(
   ({ deltaX, transition }) => ({
     style: {
@@ -12,7 +14,7 @@ export const LeftPanelContainer = styled(props => <Swiper {...props} />).attrs(
     },
   }),
 )`
-  width: 400px;
+  width: ${LeftPanelWidth};
   padding: 80px 15px 15px 15px;
   box-shadow: 0 0 12px 0 rgba(10, 18, 33, 0.1);
   cursor: default;
