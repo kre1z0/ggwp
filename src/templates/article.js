@@ -3,7 +3,8 @@ import React from "react";
 import { isReactElement } from "../utils/dom";
 import { Content, HTMLContent } from "../cms/common/Content";
 import { format } from "../utils/date";
-import { Title, Container, Date, Body, TagsList, Tag } from "../styles/article";
+import { Title, Container, Date, Body } from "../styles/article";
+import { Tags } from "../components/Tags";
 
 export const Article = ({ title, date, content, tags }) => {
   const BodyContent = isReactElement(content) ? Content : HTMLContent;
@@ -12,13 +13,7 @@ export const Article = ({ title, date, content, tags }) => {
     <Container>
       <Title>{title}</Title>
       <Date>{format(date)}</Date>
-      {tags && (
-        <TagsList>
-          {tags.map((tag, index) => (
-            <Tag key={`${tag}-${index + 1}`}>{tag}</Tag>
-          ))}
-        </TagsList>
-      )}
+      {tags && <Tags tags={tags} />}
       <BodyContent Element={Body} content={content} />
     </Container>
   );
