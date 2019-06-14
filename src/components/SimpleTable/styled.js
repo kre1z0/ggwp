@@ -16,6 +16,8 @@ export const Td = styled.td.attrs(({ cellWidth }) => ({
   padding: 4px 0 20px 4px;
   vertical-align: top;
   text-align: left;
+  border: 1px solid ${colors.dark};
+  font-weight: ${({ first }) => (first ? "bold" : "normal")};
   ul {
     margin: 0;
     padding: 10px 20px;
@@ -30,8 +32,9 @@ export const Th = styled(Td)`
   padding: 8px 12px;
   border: none;
   color: #fff;
-  background-color: ${colors.green};
+  background-color: ${colors.dark};
   font-size: 16px;
+  font-weight: bold;
 `;
 
 export const Link = styled(OutsideLink)``;

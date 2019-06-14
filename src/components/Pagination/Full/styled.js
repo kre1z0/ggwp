@@ -43,7 +43,7 @@ export const Page = styled.a`
   border-radius: 50%;
   ${({ selected }) => selected && selectedCss};
   @media (hover: hover) {
-    &:hover:not(.selected) {
+    &:hover {
       transition: color 200ms ease-in;
       color: #90c53d;
     }

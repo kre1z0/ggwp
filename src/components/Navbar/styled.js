@@ -22,6 +22,7 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  box-shadow: 0 8px 8px 0 rgba(10, 18, 33, 0.05);
 `;
 
 export const Home = styled(Link)`
@@ -62,6 +63,7 @@ export const DefaultLink = styled(GatsbyLink)`
   transition: all 200ms ease;
   @media (hover: hover) {
     &:hover {
+      text-decoration: none;
       color: #90c53d;
     }
   }

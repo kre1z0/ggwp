@@ -3,9 +3,27 @@ export default [
     name: "Корпоративный сайт",
     repo: "https://github.com/Everpoint/everpoint-site",
     demo: "https://www.everpoint.ru/",
-    skills: ["react.js", "gatsby", "netlify-cms", "lodash", "open graph"],
+    skills: ["react.js", "gatsby", "netlify-cms", "lodash", "open graph", "react-transition-group"],
     description:
       "Корпоративный сайт c использованием react + gatsby. Администрирование через netlify-cms. Анимации в переходах между страницами с использованием css, анимация svg.",
+  },
+  {
+    name: "evergis-ui",
+    repo: null,
+    demo: "http://ui.everpoint.ru",
+    skills: [
+      "react.js",
+      "typescript",
+      "jest",
+      "lodash",
+      "cleave.js",
+      "date-fns",
+      "imask",
+      "tippy.js",
+      "react-transition-group",
+    ],
+    description:
+      "UI-библиотека, <a href='https://vc.ru/design/58149-kak-my-iskali-gotovuyu-ui-biblioteku-no-v-itoge-sozdali-ee-sami' target='_blank'>cтатья</a>.",
   },
   {
     name: "Цветы 8 марта: как растет спрос и где не хватает магазинов",
@@ -31,6 +49,14 @@ export default [
     description: "Черновик библиотеки графиков с использованием svg",
   },
   {
+    name: "Геомониторинг недвижимости",
+    repo: null,
+    demo: null,
+    skills: ["react.js", "redux", "chart.js", "immutable", "lodash", "material-ui"],
+    description:
+      "Аналитическая система управления залоговым имуществом банка. Планирование выездных проверок и оценка стоимости объектов, <a href='https://www.everpoint.ru/geomonitoring' target='_blank'>cтатья</a>.",
+  },
+  {
     name: "Dota 2",
     repo: "https://github.com/kre1z0/cybersport",
     demo: "https://kre1z0.github.io/cybersport/",
@@ -44,6 +70,22 @@ export default [
     demo: "https://kre1z0.github.io/react-date-picker/",
     skills: ["react.js", "moment.js", "imask"],
     description: "Реакт датапикер с вводом времени.",
+  },
+  {
+    name: "EverGIS Online",
+    repo: null,
+    demo: "http://public.everpoint.ru",
+    skills: [
+      "react.js",
+      "typescript",
+      "jest",
+      "styled-components",
+      "redux",
+      "@evergis/ui",
+      "@evergis/sgis",
+    ],
+    description:
+      "Картографический сервис для анализа геоданных и создания интерактивных карт, <a href='https://www.everpoint.ru/evergisOnline' target='_blank'>статья</a>",
   },
   {
     name: "Конкурс от телеграма линейный график",

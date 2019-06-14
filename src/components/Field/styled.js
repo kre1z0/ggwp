@@ -4,7 +4,7 @@ import { OutsideLink } from "../../components/Semantic/Link";
 
 export const FieldContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   font-size: 18px;
   margin-bottom: 10px;
 `;

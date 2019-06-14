@@ -11,6 +11,7 @@ import {
   Container,
   Tags,
   Block,
+  PhotoLink,
   Photo,
   Name,
   ContactLink,
@@ -19,16 +20,20 @@ import {
   Table,
 } from "../styles/contacts";
 
+const github = "https://github.com/kre1z0";
+
 const About = () => {
   return (
     <Container>
       <Block>
-        <Photo src="https://avatars1.githubusercontent.com/u/10591102?s=460&v=4" alt="photo" />
+        <PhotoLink href={github} target="_blank">
+          <Photo />
+        </PhotoLink>
         <Fields>
           <Field Icon={Developer} name="profession" value="GIS front-end developer" />
           <Field Icon={People} name="company" value="Everpoint" />
           <Field Icon={Location} name="location" value="Ukraine, Khmelnytskyi" />
-          <Field Icon={Github} name="github" value="https://github.com/kre1z0" />
+          <Field Icon={Github} name="github" value={github} />
           <Tags
             tags={[
               "react.js",

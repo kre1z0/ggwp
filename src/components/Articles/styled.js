@@ -6,6 +6,7 @@ import { PaginationSimple as PaginationSimpleUI } from "../../components/Paginat
 import { Row } from "../../components/NoSemantic/Row";
 
 export const Container = styled(Row)`
+  margin-top: 24px;
   display: flex;
   flex-wrap: wrap;
 `;

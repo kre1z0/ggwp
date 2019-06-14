@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import cat from "../../static/img/cat-deal-with-it.jpg";
 import { SimpleTable } from "../components/SimpleTable";
 import { Field as FieldUI } from "../components/Field";
 import { Name as FieldName } from "../components/Field/styled";
@@ -18,11 +19,33 @@ export const Block = styled.div`
   display: flex;
 `;
 
-export const Photo = styled.img`
+export const PhotoLink = styled.a`
+  perspective: 1000px;
   width: 244px;
   height: 244px;
-  border-radius: 4px;
+  flex-shrink: 0;
   margin-right: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+`;
+
+export const Photo = styled.div`
+  transform-style: preserve-3d;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-image: url("https://avatars1.githubusercontent.com/u/10591102?s=460&v=4");
+  transition: all 200ms ease;
+  @media (hover: hover) {
+    &:hover {
+      background-image: url(${cat});
+      transform: scale(1.1);
+      filter: grayscale(100%);
+    }
+  }
 `;
 
 export const Name = styled.h1`
@@ -39,7 +62,7 @@ export const ContactLink = styled.a`
   color: inherit;
   margin-bottom: 10px;
   @media (hover: hover) {
-    &:hover:not(.selected) {
+    &:hover {
       text-decoration: underline;
       color: #90c53d;
     }
