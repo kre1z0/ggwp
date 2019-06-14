@@ -38,7 +38,7 @@ export const Photo = styled.div`
   background-repeat: no-repeat;
   background-position: center bottom;
   background-image: url("https://avatars1.githubusercontent.com/u/10591102?s=460&v=4");
-  transition: all 200ms ease;
+  transition: all 400ms ease;
   @media (hover: hover) {
     &:hover {
       background-image: url(${cat});
