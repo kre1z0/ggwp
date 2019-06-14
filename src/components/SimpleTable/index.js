@@ -16,6 +16,8 @@ const getComponent = (item, key) => {
     }
   } else if (Array.isArray(value)) {
     return <Tags tags={value} />;
+  } else {
+    return "-";
   }
 };
 
