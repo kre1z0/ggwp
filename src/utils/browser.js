@@ -5,10 +5,27 @@ export const browser = () => {
 };
 
 export const isMobile = () => {
-  const { parsedResult } = browser();
-  const {
-    platform: { type },
-  } = parsedResult;
+  if (typeof window === "object") {
+    const { parsedResult } = browser();
+    const {
+      platform: { type },
+    } = parsedResult;
 
-  return type === "mobile";
+    return type === "mobile";
+  } else {
+    return null;
+  }
+};
+
+export const isTablet = () => {
+  if (typeof window === "object") {
+    const { parsedResult } = browser();
+    const {
+      platform: { type },
+    } = parsedResult;
+
+    return type === "tablet";
+  } else {
+    return null;
+  }
 };

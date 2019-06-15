@@ -11,6 +11,9 @@ import {
   Container,
   Tags,
   Block,
+  Contacts,
+  ContactsLeftSide,
+  ContactsRightSide,
   PhotoLink,
   Photo,
   Name,
@@ -18,7 +21,7 @@ import {
   Fields,
   Field,
   Table,
-} from "../styles/contacts";
+} from "../styles/about";
 
 const github = "https://github.com/kre1z0";
 
@@ -59,14 +62,20 @@ const About = () => {
           />
         </Fields>
       </Block>
-      <Name>Igor Ivchuk</Name>
-      <ContactLink href="mailto:thekreizo@gmail.com">
-        <Email /> thekreizo@gmail.com
-      </ContactLink>
-      <br />
-      <ContactLink href="tg://resolve?domain=kreizo">
-        <Telegram /> telegram
-      </ContactLink>
+      <Contacts>
+        <ContactsLeftSide>
+          <Name>Igor Ivchuk</Name>
+          <br />
+          <ContactLink href="mailto:thekreizo@gmail.com">
+            <Email /> thekreizo@gmail.com
+          </ContactLink>
+          <br />
+          <ContactLink href="tg://resolve?domain=kreizo">
+            <Telegram /> telegram
+          </ContactLink>
+        </ContactsLeftSide>
+        <ContactsRightSide>CSS-архиепископ, гуру каскадного программирования.</ContactsRightSide>
+      </Contacts>
       <Table
         cellWidth={[20, 8, 8, 30]}
         headers={["Проект", "Repo", "Demo", "Технологии", "Описание"]}

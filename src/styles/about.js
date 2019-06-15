@@ -19,6 +19,20 @@ export const Block = styled.div`
   display: flex;
 `;
 
+export const Contacts = styled.div`
+  padding-top: 14px;
+  display: flex;
+`;
+
+export const ContactsLeftSide = styled.div`
+  flex-shrink: 0;
+  width: 264px;
+`;
+
+export const ContactsRightSide = styled.div`
+  font-size: 18px;
+`;
+
 export const PhotoLink = styled.a`
   perspective: 1000px;
   width: 244px;
@@ -49,6 +63,7 @@ export const Photo = styled.div`
 `;
 
 export const Name = styled.h1`
+  display: inline-block;
   margin-top: 0;
 `;
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import L from "leaflet";
 
+import { isMobile, isTablet } from "../../utils/browser";
 import { Content } from "./Content";
 import { LeftPanelContainer } from "./styled";
 
@@ -24,7 +25,7 @@ export class LeftPanel extends Component {
   onSwiped = ({ deltaX }) => {
     const { onClosePanel } = this.props;
 
-    if (deltaX >= 200) {
+    if (deltaX >= 140) {
       this.setState(
         {
           deltaX: 400,
@@ -70,6 +71,7 @@ export class LeftPanel extends Component {
 
     return (
       <LeftPanelContainer
+        isMobile={isMobile() || isTablet()}
         transition={transition}
         deltaX={deltaX}
         onSwiped={this.onSwiped}

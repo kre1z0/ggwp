@@ -21,7 +21,7 @@ export const Tag = styled.div`
     background-color: #4b39c3;
   }
   &:nth-of-type(10n - 7) {
-    background-color: rgb(119, 119, 119);
+    background-color: #7fbf44;
   }
   &:nth-of-type(10n - 6) {
     background-color: #eeaf47;

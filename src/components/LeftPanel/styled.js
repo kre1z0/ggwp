@@ -1,10 +1,24 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 import { IconButton } from "../../components/Buttons/IconButton";
 import { Swiper } from "../../components/Swiper";
 
 export const LeftPanelWidth = "400px";
+
+const Line = css`
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 6px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+  }
+`;
 
 export const LeftPanelContainer = styled(props => <Swiper {...props} />).attrs(
   ({ deltaX, transition }) => ({
@@ -24,17 +38,7 @@ export const LeftPanelContainer = styled(props => <Swiper {...props} />).attrs(
   height: 100%;
   background-color: #fff;
   overflow: hidden;
-  &:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
-    width: 6px;
-    height: 80px;
-    background-color: rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-  }
+  ${({ isMobile }) => isMobile && Line}
 `;
 
 export const ScrolledContent = styled.div`
