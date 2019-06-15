@@ -27,12 +27,14 @@ export const Figure = styled.figure`
   width: 100%;
   margin: 0 0 25px 0;
   overflow: hidden;
-  &:hover {
-    ${Preview} {
-      transform: scale(1.2);
-    }
-    ${Title} {
-      text-decoration: underline;
+  @media (hover: hover) {
+    &:hover {
+      ${Preview} {
+        transform: scale(1.2);
+      }
+      ${Title} {
+        text-decoration: underline;
+      }
     }
   }
 `;
@@ -46,4 +48,9 @@ export const Description = styled.p`
 export const Link = styled(GatsbyLink)`
   text-decoration: none;
   color: inherit;
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+    }
+  }
 `;

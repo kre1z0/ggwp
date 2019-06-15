@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { Close } from "../../components/Icons/Close";
-import { CloseBtn, Flag } from "./styled";
+import { CloseBtn, ScrolledContent, Flag } from "./styled";
 import { Field } from "../Field";
 
 export class Content extends Component {
@@ -21,10 +21,40 @@ export class Content extends Component {
           <Close />
         </CloseBtn>
         <h1>{name}</h1>
-        <Field name="name 1" value="value 1" />
-        <Field name="name 2" value="value 2" />
-        <Field name="name 3" value="value 3" />
-        <Field name="name 4" value="value 4" />
+        <ScrolledContent>
+          <Field name="name 1" value="value 1" />
+          <Field name="name 2" value="value 2" />
+          <Field name="name 3" value="value 3" />
+          <Field name="name 4" value="value 4" />
+          <Field name="name 1" value="value 1" />
+          <Field name="name 2" value="value 2" />
+          <Field name="name 3" value="value 3" />
+          <Field name="name 4" value="value 4" />
+          <Field name="name 1" value="value 1" />
+          <Field name="name 2" value="value 2" />
+          <Field name="name 3" value="value 3" />
+          <Field name="name 4" value="value 4" />
+          <Field name="name 1" value="value 1" />
+          <Field name="name 2" value="value 2" />
+          <Field name="name 3" value="value 3" />
+          <Field name="name 4" value="value 4" />
+          <Field name="name 1" value="value 1" />
+          <Field name="name 2" value="value 2" />
+          <Field name="name 3" value="value 3" />
+          <Field name="name 4" value="value 4" />
+          <Field name="name 1" value="value 1" />
+          <Field name="name 2" value="value 2" />
+          <Field name="name 3" value="value 3" />
+          <Field name="name 4" value="value 4" />
+          <Field name="name 1" value="value 1" />
+          <Field name="name 2" value="value 2" />
+          <Field name="name 3" value="value 3" />
+          <Field name="name 4" value="value 4" />
+          <Field name="name 1" value="value 1" />
+          <Field name="name 2" value="value 2" />
+          <Field name="name 3" value="value 3" />
+          <Field name="end ggwp 4444" value="value 4" />
+        </ScrolledContent>
       </>
     );
   }

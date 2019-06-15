@@ -28,7 +28,7 @@ class HTML extends Component {
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-          <title>Kre1z0 blog</title>
+          <title>Kr31z0 blog</title>
           <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic-ext"
             rel="stylesheet"

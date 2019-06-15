@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: test-repo
   repo: kre1z0/ggwp
   branch: master
 
@@ -21,3 +21,20 @@ collections:
       - {label: "Теги", name: "tags", widget: "list"}
       - {label: "Дата публикации статьи", name: "date", widget: "date", default: ""}
       - {label: "Статья", name: "body", widget: "markdown"}
+  - name: "counties"
+    label: "Страны"
+    widget: "string"
+    folder: "src/data/counties"
+    identifier_field: "name"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "counties"}
+      - {label: "Страна", name: "country", widget: "country-select", default: "Украина"}
+      - label: "Поля"
+        name: "fields"
+        widget: "list"
+        required: false
+        default: [null]
+        fields:
+          - {label: "Имя", name: "name", widget: "string", default: ""}
+          - {label: "Значение", name: "value", widget: "string", default: ""}

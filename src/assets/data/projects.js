@@ -8,7 +8,7 @@ export default [
       "Корпоративный сайт c использованием react + gatsby. Администрирование через netlify-cms. Анимации в переходах между страницами с использованием css, анимация svg.",
   },
   {
-    name: "evergis-ui",
+    name: "Evergis UI",
     repo: null,
     demo: "http://ui.everpoint.ru",
     skills: [

@@ -10310,7 +10310,7 @@ export default [
     latlng: [40, 127],
     flag: "https://restcountries.eu/data/prk.svg",
     code: "KP",
-    name: "Korea, Democratic People's Republic of",
+    name: "North Korea",
     geoJSON: {
       type: "Polygon",
       coordinates: [

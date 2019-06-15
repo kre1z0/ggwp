@@ -18,7 +18,8 @@ export class LeftPanel extends Component {
     return deltaX !== nextDeltaX || code !== nextcode;
   }
 
-  onRef = ref => ref && L.DomEvent.disableClickPropagation(ref);
+  onRef = ref =>
+    ref && L.DomEvent.disableClickPropagation(ref) && L.DomEvent.disableScrollPropagation(ref);
 
   onSwiping = ({ deltaX }) => {
     this.setState({ deltaX: rateLimit(deltaX, 0, 400), transition: false });

@@ -15,7 +15,7 @@ export const LeftPanelContainer = styled(props => <Swiper {...props} />).attrs(
   }),
 )`
   width: ${LeftPanelWidth};
-  padding: 80px 15px 15px 15px;
+  padding: 50px 0 15px 15px;
   box-shadow: 0 0 12px 0 rgba(10, 18, 33, 0.1);
   cursor: default;
   z-index: 999;
@@ -26,12 +26,18 @@ export const LeftPanelContainer = styled(props => <Swiper {...props} />).attrs(
   overflow: hidden;
 `;
 
+export const ScrolledContent = styled.div`
+  overflow-y: auto;
+  overflow-y: overlay;
+  height: calc(100% - 54px);
+`;
+
 export const Flag = styled.img`
   position: absolute;
   left: 15px;
   top: 15px;
-  width: 60px;
-  height: auto;
+  width: auto;
+  height: 44px;
   box-shadow: 0 6px 6px 0 rgba(10, 18, 33, 0.2);
 `;
 
