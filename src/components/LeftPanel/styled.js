@@ -24,11 +24,23 @@ export const LeftPanelContainer = styled(props => <Swiper {...props} />).attrs(
   height: 100%;
   background-color: #fff;
   overflow: hidden;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 6px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+  }
 `;
 
 export const ScrolledContent = styled.div`
   overflow-y: auto;
   overflow-y: overlay;
+  -webkit-overflow-scrolling: touch;
   height: calc(100% - 54px);
 `;
 

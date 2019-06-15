@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import L from "leaflet";
 
-import { rateLimit } from "../../utils/number";
 import { Content } from "./Content";
 import { LeftPanelContainer } from "./styled";
 
@@ -9,6 +8,7 @@ export class LeftPanel extends Component {
   state = {
     deltaX: 400,
     transition: false,
+    blockXSwipe: false,
   };
 
   shouldComponentUpdate({ code: nextcode }, { deltaX: nextDeltaX }) {
@@ -20,10 +20,6 @@ export class LeftPanel extends Component {
 
   onRef = ref =>
     ref && L.DomEvent.disableClickPropagation(ref) && L.DomEvent.disableScrollPropagation(ref);
-
-  onSwiping = ({ deltaX }) => {
-    this.setState({ deltaX: rateLimit(deltaX, 0, 400), transition: false });
-  };
 
   onSwiped = ({ deltaX }) => {
     const { onClosePanel } = this.props;
@@ -77,7 +73,6 @@ export class LeftPanel extends Component {
         transition={transition}
         deltaX={deltaX}
         onSwiped={this.onSwiped}
-        onSwiping={this.onSwiping}
         onRef={this.onRef}
       >
         <Content onClosePanel={this.onClosePanel} {...this.props} />
