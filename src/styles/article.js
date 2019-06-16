@@ -15,3 +15,13 @@ export const Date = styled.div`
 `;
 
 export const Body = styled.article``;
+
+export const Footer = styled.footer`
+  margin-top: 44px;
+  height: 80px;
+`;
+
+export const Copyright = styled.div`
+  margin-top: 10px;
+  color: rgba(38, 44, 55, 0.5);
+`;

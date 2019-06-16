@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Kr31z0 blog",
-    twitterHandle: "@kre1z0",
+    twitterHandle: "@Kreiz0",
     url: "http://ggwpnore.netlify.com",
   },
   plugins: [

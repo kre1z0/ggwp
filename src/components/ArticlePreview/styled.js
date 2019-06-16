@@ -54,3 +54,10 @@ export const Link = styled(GatsbyLink)`
     }
   }
 `;
+
+export const Tag = styled.span`
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+  margin-right: 4px;
+`;

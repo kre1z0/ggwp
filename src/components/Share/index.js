@@ -8,8 +8,6 @@ import {
   ViberIcon,
   VKShareButton,
   VKIcon,
-  OKShareButton,
-  OKIcon,
   WhatsappShareButton,
   WhatsappIcon,
   TwitterShareButton,
@@ -20,19 +18,14 @@ import { ShareContainer } from "./styled";
 
 const socials = [
   {
-    quote: "facebook",
-    Button: FacebookShareButton,
-    Icon: FacebookIcon,
-  },
-  {
     name: "telegram",
     Button: TelegramShareButton,
     Icon: TelegramIcon,
   },
   {
-    name: "viber",
-    Button: ViberShareButton,
-    Icon: ViberIcon,
+    quote: "facebook",
+    Button: FacebookShareButton,
+    Icon: FacebookIcon,
   },
   {
     name: "vk",
@@ -40,9 +33,9 @@ const socials = [
     Icon: VKIcon,
   },
   {
-    name: "ok",
-    Button: OKShareButton,
-    Icon: OKIcon,
+    name: "viber",
+    Button: ViberShareButton,
+    Icon: ViberIcon,
   },
   {
     name: "whatsapp",
