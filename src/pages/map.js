@@ -3,6 +3,8 @@ import throttle from "lodash/throttle";
 // https://leafletjs.com/reference-1.4.0.html
 // https://react-leaflet.js.org/docs/en/context.html
 import { TileLayer } from "react-leaflet";
+// https://github.com/sindresorhus/query-string
+import queryString from "query-string";
 
 import { LeafletMap } from "../styles/map";
 import { CountryPolygon } from "../components/CountryPolygon";
@@ -23,6 +25,16 @@ class Map extends Component {
     selectedCountry: null,
     hoveredCountry: null,
   };
+
+  componentDidMount() {
+    const { location } = this.props;
+    const { country } = queryString.parse(location.search);
+
+    if (country) {
+      const contryFromQuery = countryPolygons.find(({ code }) => code === country);
+      this.setState({ selectedCountry: contryFromQuery });
+    }
+  }
 
   onCountry = (e, country) => {
     const { selectedCountry } = this.state;
@@ -59,6 +71,7 @@ class Map extends Component {
 
   render() {
     const { lat, lng, zoom, selectedCountry, hoveredCountry } = this.state;
+    const { location, navigate } = this.props;
     const position = [lat, lng];
 
     if (typeof window !== "undefined") {
@@ -98,7 +111,12 @@ class Map extends Component {
               />
             );
           })}
-          <LeftPanel onClosePanel={this.onClosePanel} {...selectedCountry} />
+          <LeftPanel
+            location={location}
+            navigate={navigate}
+            onClosePanel={this.onClosePanel}
+            {...selectedCountry}
+          />
         </LeafletMap>
       );
     } else {

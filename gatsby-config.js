@@ -57,6 +57,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-compile-es6-packages`,
+      options: {
+        modules: [`query-string`],
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/pages`,

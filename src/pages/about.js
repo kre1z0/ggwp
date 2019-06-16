@@ -74,7 +74,10 @@ const About = () => {
             <Telegram /> telegram
           </ContactLink>
         </ContactsLeftSide>
-        <ContactsRightSide>CSS-архиепископ, гуру каскадного программирования.</ContactsRightSide>
+        <ContactsRightSide>
+          CSS-архиепископ, гуру каскадного программирования. Это мой личный блог в котором я пишу на
+          любые темы.
+        </ContactsRightSide>
       </Contacts>
       <Table
         cellWidth={[20, 8, 8, 30]}

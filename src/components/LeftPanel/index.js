@@ -40,14 +40,28 @@ export class LeftPanel extends Component {
     }
   };
 
-  componentDidUpdate({ code: prevcode }, prevState) {
+  componentDidMount() {
     const { code } = this.props;
 
-    const countyIsChanged = prevcode !== code;
-
-    if (countyIsChanged && code) {
+    if (code) {
       this.setState({ deltaX: 0, transition: true });
-    } else if (countyIsChanged && !code) {
+    }
+  }
+
+  componentDidUpdate({ code: prevcode }, prevState) {
+    const { code, location, navigate } = this.props;
+
+    const countryIsChanged = prevcode !== code;
+
+    if (code) {
+      navigate(`${location.pathname}?country=${code}`);
+    } else {
+      navigate(location.pathname);
+    }
+
+    if (countryIsChanged && code) {
+      this.setState({ deltaX: 0, transition: true });
+    } else if (countryIsChanged && !code) {
       this.setState({ deltaX: 400, transition: true });
     }
   }
