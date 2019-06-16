@@ -1,6 +1,6 @@
 ---
 templateKey: article
-title: Неизвестный css
+title: 'Неизвестный css #1'
 description: 'Несколько неочевидных свойств CSS, о которых вы могли не знать. '
 preview: /img/html-css.jpg
 tags:
@@ -42,5 +42,7 @@ c свойством overlay контент не прыгает
 Устанавливает цвет выделения активного элемента при тапе на нем (a, label). По умолчанию это серый цвет, и часто может быть ни к чему, или выбиваться из общего дизайна.
 
 `webkit-tap-highlight-color: transparent;`
+
+Так же убирает закрашивание страницы при тапе по пустой области.
 
 ![webkit-tap-highlight-color](/img/webkit-tap-highlight-color.jpg "webkit-tap-highlight-color")
