@@ -36,6 +36,9 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
+  .gatsby-resp-image-link {
+    
+  }
   ${typography}
   ${leaflet}
 `;
