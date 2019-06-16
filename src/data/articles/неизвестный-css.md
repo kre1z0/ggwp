@@ -48,3 +48,17 @@ c свойством overlay
 Так же убирает закрашивание страницы при тапе по пустой области.
 
 ![webkit-tap-highlight-color](/img/webkit-tap-highlight-color.jpg "webkit-tap-highlight-color")
+
+## 4. Text Overflow
+
+С помощью свойства text-overflow можно обрезать текст, который выходит за рамки контейнера:
+
+`width: 340px; /* ширина контейнера */`
+
+`text-overflow: ellipsis; /* вставляем троеточие */`
+
+`white-space: nowrap; /* запрещаем перенос строк */`
+
+`overflow: hidden; /* обрезаем всё, что выходит за рамки контейнера */`
+
+![text-overflow](/img/text-overflow.gif "text-overflow")
