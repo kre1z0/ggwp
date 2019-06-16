@@ -71,8 +71,8 @@ CSS псевдоэлемент ::first-letter применяет стили к �
 
 `p:first-letter { font-size: 40px; }`
 
-<a href="https://codepen.io/kamtr0n/pen/GyojZK?&page=1" target="_blank">Пример на codepen</a>.
+<a href="https://codepen.io/kreiz0/pen/dBMowV?&page=1" target="_blank">Пример на codepen</a>.
 
-![first-letter](/img/first-letter.jpg "first-letter")
+![first-letter](/img/first-letter.png "first-letter")
 
 Не работает на встроенных элементах, таких как span. :: first-letter работает с элементами блока, такими как абзац, заголовок таблицы, ячейка таблицы, элемент списка или элементы, для которых свойство display имеет значение inline-block. Поэтому лучше применять :: first-letter к p вместо span.
