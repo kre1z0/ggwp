@@ -47,8 +47,8 @@ class HTML extends Component {
           {/*  property="og:description"*/}
           {/*  content="Разработчик геоинформационных систем и сервисов."*/}
           {/*/>*/}
-          {/*<meta property="og:site_name" content="Everpoint" />*/}
-          {/*<meta property="twitter:title" content="Everpoint" />*/}
+          <meta property="og:site_name" content="Kr31z0 blog" />
+          <meta property="twitter:title" content="Kr31z0 blog" />
           {/*<meta property="twitter:image:src" content={ogImage} />*/}
           {/*<meta*/}
           {/*  property="twitter:description"*/}

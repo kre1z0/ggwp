@@ -1,11 +1,8 @@
-const pathPrefix = "/ggwp";
-
 module.exports = {
-  pathPrefix,
   siteMetadata: {
-    title: "ggwp",
-    twitterHandle: "@swashata",
-    url: "https://kre1z0.github.io/ggwp",
+    title: "Kr31z0 blog",
+    twitterHandle: "@kre1z0",
+    url: "http://ggwpnore.netlify.com",
   },
   plugins: [
     "gatsby-plugin-styled-components",
