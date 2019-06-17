@@ -42,9 +42,6 @@ export const GlobalStyle = createGlobalStyle`
        background: ${color.dark}; /* Цвет фона */
     }
   }
-  .gatsby-resp-image-link {
-    
-  }
   ${typography}
   ${leaflet}
 `;

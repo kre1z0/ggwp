@@ -1,30 +1,26 @@
 import { css } from "styled-components";
 
+import alert from "../assets/img/alert.svg";
 import color from "./colors";
 
 const typography = css`
-  h1,
-  h2 {
-  }
-  h1 {
-  }
-
-  h2 {
-  }
   ul {
     li {
       font-size: 18px;
       margin-bottom: 1em;
     }
   }
+
   em {
     font-size: 18px;
   }
+
   p {
     line-height: 1.5;
     font-size: 16px;
     margin: 20px 0;
   }
+
   hr {
     border: none;
     text-align: left;
@@ -42,6 +38,27 @@ const typography = css`
     border-radius: 4px;
     padding: 4px 8px;
     background-color: #f8f8f8;
+  }
+
+  mark {
+    border-radius: 4px;
+    text-indent: 32px;
+    position: relative;
+    padding: 6px 8px 6px 8px;
+    display: inline-block;
+    background-color: #ffd041;
+    &:before {
+      position: absolute;
+      top: 6px;
+      left: 8px;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      content: "";
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(${alert});
+    }
   }
 
   a {
