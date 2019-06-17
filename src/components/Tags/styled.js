@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 
+import colors from "../../styles/colors";
+
 export const TagsList = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -10,8 +12,9 @@ const active = css`
 `;
 
 const disabledStyle = css`
-  opacity: 0.4;
-  border: 1px dashed #fff;
+  transform: scale(1.4);
+  border: 1px solid ${colors.dark};
+  box-shadow: 0 8px 8px 0 rgba(10, 18, 33, 0.24);
 `;
 
 export const Tag = styled.div`
@@ -20,7 +23,8 @@ export const Tag = styled.div`
   padding: 4px 8px;
   color: #fff;
   margin: 0 10px 10px 0;
-  border: 1px dashed transparent;
+  transition: all 200ms ease;
+  border: 1px solid transparent;
   ${({ onClick }) => onClick && active}
   ${({ disabled }) => disabled && disabledStyle}
   &:last-of-type {

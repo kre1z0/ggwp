@@ -31,6 +31,7 @@ export const Description = styled.p`
 `;
 
 export const Link = styled(GatsbyLink)`
+  display: block;
   text-decoration: none;
   color: inherit;
   @media (hover: hover) {
@@ -43,9 +44,15 @@ export const Link = styled(GatsbyLink)`
   }
 `;
 
-export const Tag = styled.span`
+export const Tags = styled.div`
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const Tag = styled.div`
   text-transform: uppercase;
   font-size: 12px;
   color: rgba(0, 0, 0, 0.4);
-  margin-right: 4px;
+  margin: 0 4px 4px 0;
 `;

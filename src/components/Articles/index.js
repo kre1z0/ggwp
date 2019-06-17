@@ -4,7 +4,9 @@ import { Tags } from "../../components/Tags";
 import { ArticlePreview } from "../ArticlePreview";
 import { rowColumns } from "../../utils/array";
 import { isMobile } from "../../utils/browser";
-import { Container, Column, PaginationFull, PaginationSimple } from "./styled";
+import { PaginationFull } from "../../components/Pagination/Full/PaginationFull";
+import { PaginationSimple } from "../../components/Pagination/Simple/PaginationSimple";
+import { Container, ColumnsContainer, Column } from "./styled";
 
 export class Articles extends Component {
   state = {
@@ -17,7 +19,7 @@ export class Articles extends Component {
   };
 
   componentDidMount() {
-    this.setPagination(null);
+    this.setPagination(null, 1);
     this.setTags();
   }
 
@@ -33,39 +35,38 @@ export class Articles extends Component {
     this.setState({ tags: Array.from(tags) });
   };
 
-  setPagination = disabledTag => {
+  setPagination = (disabledTag, currentPage = 1) => {
     const { data, articlesPerPage } = this.props;
     const columnsCount = isMobile() ? 1 : 2;
-    const { currentPage } = this.state;
 
-    const AllArticles = data
+    const allArticles = data
       ? data.filter(({ tags }) => disabledTag === null || tags.includes(disabledTag))
       : [];
 
-    const articles = this.pagination(currentPage, AllArticles, disabledTag);
-    const pageCount = Math.ceil(AllArticles.length / articlesPerPage);
+    const articles = this.pagination(currentPage, allArticles, disabledTag);
+    const pageCount = Math.ceil(allArticles.length / articlesPerPage);
     const columns = rowColumns(articles, columnsCount);
 
     this.setState({ pageCount, columns, columnsCount });
   };
 
-  pagination = (page, AllArticles) => {
+  pagination = (page, allArticles) => {
     const { articlesPerPage } = this.props;
 
     const from = articlesPerPage * (page - 1);
     const to = from + articlesPerPage;
 
-    return AllArticles.slice(from, to);
+    return allArticles.slice(from, to);
   };
 
   onPageChange = currentPage => {
     const { data } = this.props;
     const { columnsCount, disabledTag } = this.state;
 
-    const AllArticles = data
+    const allArticles = data
       ? data.filter(({ tags }) => disabledTag === null || tags.includes(disabledTag))
       : [];
-    const items = this.pagination(currentPage, AllArticles);
+    const items = this.pagination(currentPage, allArticles);
     const columns = rowColumns(items, columnsCount);
 
     this.setState({
@@ -78,10 +79,10 @@ export class Articles extends Component {
     const { disabledTag } = this.state;
 
     if (disabledTag === tag) {
-      this.setState({ disabledTag: null });
+      this.setState({ disabledTag: null, currentPage: 1 });
       this.setPagination(null);
     } else {
-      this.setState({ disabledTag: tag });
+      this.setState({ disabledTag: tag, currentPage: 1 });
       this.setPagination(tag);
     }
   };
@@ -93,14 +94,16 @@ export class Articles extends Component {
     return (
       <Container>
         <Tags tags={tags} onClick={this.onTagClick} disabledTag={disabledTag} />
-        {columns.map((col, index) => (
-          <Column key={index} oneColumn={columnsCount === 1}>
-            {!data && <h2>Список статей пуст</h2>}
-            {col.map(article => (
-              <ArticlePreview key={article.id} {...article} />
-            ))}
-          </Column>
-        ))}
+        <ColumnsContainer>
+          {columns.map((col, index) => (
+            <Column key={index} oneColumn={columnsCount === 1}>
+              {!data && <h2>Список статей пуст</h2>}
+              {col.map(article => (
+                <ArticlePreview key={article.id} {...article} />
+              ))}
+            </Column>
+          ))}
+        </ColumnsContainer>
         {pageCount > 1 && (
           <>
             <PaginationFull

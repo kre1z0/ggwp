@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 
+import colors from "../../../styles/colors";
+
 export const Nav = styled.nav`
   margin: 0 auto 44px auto;
   display: flex;
@@ -19,6 +21,10 @@ export const Nav = styled.nav`
   @media (max-width: 812px) and (orientation: landscape) {
     margin-bottom: 3.4rem;
   }
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
+    display: none;
+  }
 `;
 
 const selectedCss = css`
@@ -27,9 +33,15 @@ const selectedCss = css`
   color: #fff;
   background-color: #90c53d;
   border-radius: 50%;
+  @media (hover: hover) {
+    &:hover {
+      color: #fff;
+    }
+  }
 `;
 
 export const Page = styled.a`
+  color: ${colors.dark};
   position: relative;
   display: flex;
   font-size: 1rem;
@@ -41,11 +53,12 @@ export const Page = styled.a`
   align-items: center;
   cursor: pointer;
   border-radius: 50%;
-  ${({ selected }) => selected && selectedCss};
   @media (hover: hover) {
     &:hover {
+      text-decoration: none;
       transition: color 200ms ease-in;
       color: #90c53d;
     }
   }
+  ${({ selected }) => selected && selectedCss};
 `;

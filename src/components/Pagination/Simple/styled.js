@@ -4,23 +4,31 @@ import { Button } from "../../../components/Buttons/Button";
 
 export const Container = styled.nav`
   display: none;
-  @media (max-width: 991px) {
-    margin: 0 auto 44px auto;
-    padding: 0 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
     display: flex;
-    align-items: center;
-    left: 50%;
-    transform: translate(-50%, calc(100% + 1rem));
-    position: absolute;
-    bottom: 0;
-  }
-  @media (max-width: 812px) and (orientation: landscape) and (max-height: 340px) {
-    transform: translate(-50%, calc(100% + 0.2rem));
-  }
-  @media (max-width: 767px) and (orientation: portrait) and (max-height: 490px) {
-    transform: translate(-50%, calc(100% + 0.5rem));
+    margin: 0 auto 40px auto;
+    > span {
+      width: 3.4rem;
+      color: #000;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    svg {
+      height: 0.9rem;
+      path {
+        fill: rgba(38, 44, 55, 1);
+        stroke: rgba(38, 44, 55, 1);
+      }
+    }
+    button {
+      &:first-child {
+        margin-right: 1rem;
+      }
+      &:last-child {
+        margin-left: 1rem;
+      }
+    }
   }
 `;
 
