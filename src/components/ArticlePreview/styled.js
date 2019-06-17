@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
 
-export const PreviewContainer = styled.div`
-  overflow: hidden;
-`;
-
 export const Date = styled.div`
   font-weight: 600;
   margin-top: 4px;
@@ -26,17 +22,6 @@ export const Figure = styled.figure`
   cursor: pointer;
   width: 100%;
   margin: 0 0 25px 0;
-  overflow: hidden;
-  @media (hover: hover) {
-    &:hover {
-      ${Preview} {
-        transform: scale(1.2);
-      }
-      ${Title} {
-        text-decoration: underline;
-      }
-    }
-  }
 `;
 
 export const Description = styled.p`
@@ -51,6 +36,9 @@ export const Link = styled(GatsbyLink)`
   @media (hover: hover) {
     &:hover {
       text-decoration: none;
+      ${Title} {
+        text-decoration: underline;
+      }
     }
   }
 `;

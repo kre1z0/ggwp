@@ -26,6 +26,8 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     letter-spacing: 0;
     width: 100%;
+    overflow-y: auto;
+    overflow-y: overlay;
     ${({ fullHeight }) => fullHeight && fullHeightCss};
   }
   img {

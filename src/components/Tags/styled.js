@@ -1,8 +1,17 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const TagsList = styled.div`
   display: flex;
   flex-wrap: wrap;
+`;
+
+const active = css`
+  cursor: pointer;
+`;
+
+const disabledStyle = css`
+  opacity: 0.4;
+  border: 1px dashed #fff;
 `;
 
 export const Tag = styled.div`
@@ -11,6 +20,9 @@ export const Tag = styled.div`
   padding: 4px 8px;
   color: #fff;
   margin: 0 10px 10px 0;
+  border: 1px dashed transparent;
+  ${({ onClick }) => onClick && active}
+  ${({ disabled }) => disabled && disabledStyle}
   &:last-of-type {
     margin-right: 0;
   }

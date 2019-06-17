@@ -1,14 +1,12 @@
 import React from "react";
 
 import { format } from "../../utils/date";
-import { Link, Figure, PreviewContainer, Preview, Title, Description, Date, Tag } from "./styled";
+import { Link, Figure, Preview, Title, Description, Date, Tag } from "./styled";
 
 export const ArticlePreview = ({ preview, title, description, date, tags, slug }) => (
   <Link to={slug}>
     <Figure>
-      <PreviewContainer>
-        <Preview src={preview} />
-      </PreviewContainer>
+      <Preview src={preview} />
       <Title>{title}</Title>
       <Date>{format(date)}</Date>
       <Description>{description}</Description>
