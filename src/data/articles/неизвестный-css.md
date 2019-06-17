@@ -61,7 +61,7 @@ c свойством overlay
 
 CSS псевдоэлемент ::first-letter применяет стили к первой букве первой строки блочного элемента
 
-<code>p:first-letter { <br>  font-size: 40px; <br>}</code>
+<code>p:first-letter { <br> // стили <br>}</code>
 
 <a href="https://codepen.io/kreiz0/pen/dBMowV?&page=1" target="_blank">Пример на codepen</a>.
 
