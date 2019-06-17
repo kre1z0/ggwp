@@ -35,7 +35,7 @@ const typography = css`
   }
 
   code {
-    display: block;
+    display: inline-block;
     white-space: pre-wrap;
     font-family: Monaco, Menlo, Consolas, "Courier New", monospace !important;
     border: 1px solid rgba(0, 0, 0, 0.15);

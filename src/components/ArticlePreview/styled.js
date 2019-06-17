@@ -1,5 +1,14 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
+
+import { Arrow as ArrowUI } from "../../components/Icons/Arrow";
+import { containerWidth } from "../../styles/breakpoints";
+
+const jump = keyframes`
+  0% { top: 50%; }
+  50% { top: calc(50% - 24px); }
+  100% { top: 50%; }
+`;
 
 export const Date = styled.div`
   font-weight: 600;
@@ -8,10 +17,24 @@ export const Date = styled.div`
   color: rgba(0, 0, 0, 0.4);
 `;
 
+export const Arrow = styled(ArrowUI)`
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-140%, -50%) rotate(90deg);
+`;
+
+export const PreviewContainer = styled.div`
+  position: relative;
+`;
+
 export const Preview = styled.img`
+  z-index: 1;
+  position: relative;
   width: 100%;
   height: auto;
-  transition: transform 200ms;
+  transition: transform 400ms;
+  transform-origin: 0 50%;
 `;
 
 export const Title = styled.h2`
@@ -37,8 +60,14 @@ export const Link = styled(GatsbyLink)`
   @media (hover: hover) {
     &:hover {
       text-decoration: none;
+      ${Preview} {
+        transform: perspective(calc(${containerWidth} / 2)) rotateY(14deg);
+      }
       ${Title} {
         text-decoration: underline;
+      }
+      ${Arrow} {
+        animation: ${jump} 800ms ease-in-out infinite;
       }
     }
   }

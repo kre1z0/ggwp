@@ -38,7 +38,7 @@ export class PreviewContainer extends Component {
 
   render() {
     const { width, height } = this.state;
-    const { children, ...props } = this.props;
+    const { children, withExplanations, ...props } = this.props;
 
     return (
       <StyleSheetManager>
@@ -46,7 +46,7 @@ export class PreviewContainer extends Component {
           <Normalize />
           <GlobalStyle />
           <Viewport>
-            {width}x{height}
+            {width}x{height} {withExplanations && <span>{`&nbsp;`} - символ пробела</span>}
           </Viewport>
           <Container ref={this.onRef} {...props}>
             {children}

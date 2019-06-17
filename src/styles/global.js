@@ -37,6 +37,10 @@ export const GlobalStyle = createGlobalStyle`
   }
   * {
     box-sizing: border-box;
+    ::selection {
+       color: #fff; /* Цвет текста */
+       background: ${color.dark}; /* Цвет фона */
+    }
   }
   .gatsby-resp-image-link {
     
