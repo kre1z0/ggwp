@@ -123,6 +123,7 @@ export const Table = styled(SimpleTable)`
   margin-top: 20px;
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   ${TableUI} {
     min-width: 704px;
   }
