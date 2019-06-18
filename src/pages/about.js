@@ -1,5 +1,6 @@
 import React from "react";
 
+import { isMobile } from "../utils/browser";
 import { People } from "../components/Icons/People";
 import { Location } from "../components/Icons/Location";
 import { Developer } from "../components/Icons/Developer";
@@ -11,7 +12,7 @@ import {
   Container,
   Tags,
   Block,
-  Contacts,
+  ContactsBlock,
   ContactsLeftSide,
   ContactsRightSide,
   PhotoLink,
@@ -25,6 +26,26 @@ import {
 
 const github = "https://github.com/kre1z0";
 
+const Contacts = () => (
+  <ContactsBlock>
+    <ContactsLeftSide>
+      <Name>Igor Ivchuk</Name>
+      <br />
+      <ContactLink href="mailto:thekreizo@gmail.com">
+        <Email /> thekreizo@gmail.com
+      </ContactLink>
+      <br />
+      <ContactLink href="tg://resolve?domain=kreizo">
+        <Telegram /> telegram
+      </ContactLink>
+    </ContactsLeftSide>
+    <ContactsRightSide>
+      CSS-архиепископ, гуру каскадного программирования. Это мой личный блог в котором я пишу на
+      любые темы.
+    </ContactsRightSide>
+  </ContactsBlock>
+);
+
 const About = () => {
   return (
     <Container>
@@ -32,6 +53,7 @@ const About = () => {
         <PhotoLink href={github} target="_blank">
           <Photo />
         </PhotoLink>
+        {isMobile() && <Contacts />}
         <Fields>
           <Field Icon={Developer} name="profession" value="GIS front-end developer" />
           <Field Icon={People} name="company" value="Everpoint" />
@@ -62,23 +84,7 @@ const About = () => {
           />
         </Fields>
       </Block>
-      <Contacts>
-        <ContactsLeftSide>
-          <Name>Igor Ivchuk</Name>
-          <br />
-          <ContactLink href="mailto:thekreizo@gmail.com">
-            <Email /> thekreizo@gmail.com
-          </ContactLink>
-          <br />
-          <ContactLink href="tg://resolve?domain=kreizo">
-            <Telegram /> telegram
-          </ContactLink>
-        </ContactsLeftSide>
-        <ContactsRightSide>
-          CSS-архиепископ, гуру каскадного программирования. Это мой личный блог в котором я пишу на
-          любые темы.
-        </ContactsRightSide>
-      </Contacts>
+      {!isMobile() && <Contacts />}
       <Table
         cellWidth={[20, 8, 8, 30]}
         headers={["Проект", "Repo", "Demo", "Технологии", "Описание"]}

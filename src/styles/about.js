@@ -6,9 +6,14 @@ import { Field as FieldUI } from "../components/Field";
 import { Name as FieldName } from "../components/Field/styled";
 import { Row } from "../components/NoSemantic/Row";
 import { Tags as TagsUI } from "../components/Tags";
+import { Table as TableUI } from "../components/SimpleTable/styled";
 
 export const Container = styled(Row)`
   margin: 44px auto 100px auto;
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
+    margin: 24px auto 44px auto;
+  }
 `;
 
 export const Tags = styled(TagsUI)`
@@ -17,11 +22,19 @@ export const Tags = styled(TagsUI)`
 
 export const Block = styled.div`
   display: flex;
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
+    flex-direction: column;
+  }
 `;
 
-export const Contacts = styled.div`
+export const ContactsBlock = styled.div`
   padding-top: 14px;
   display: flex;
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
+    flex-direction: column;
+  }
 `;
 
 export const ContactsLeftSide = styled.div`
@@ -89,15 +102,28 @@ export const ContactLink = styled.a`
 
 export const Fields = styled.div`
   flex-grow: 1;
+  @media (max-width: 812px) and (orientation: landscape),
+    (max-width: 767px) and (orientation: portrait) {
+    margin-top: 24px;
+  }
 `;
 
 export const Field = styled(FieldUI)`
   margin-bottom: 14px;
   ${FieldName} {
     width: 24%;
+    @media (max-width: 812px) and (orientation: landscape),
+      (max-width: 767px) and (orientation: portrait) {
+      width: 30%;
+    }
   }
 `;
 
 export const Table = styled(SimpleTable)`
   margin-top: 20px;
+  width: 100%;
+  overflow-x: auto;
+  ${TableUI} {
+    min-width: 704px;
+  }
 `;

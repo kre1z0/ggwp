@@ -3,6 +3,8 @@ import styled from "styled-components";
 import colors from "../../styles/colors";
 import { OutsideLink } from "../../components/Semantic/Link";
 
+export const Container = styled.div``;
+
 export const Table = styled.table`
   line-height: 1.4;
   border-spacing: 4px;
