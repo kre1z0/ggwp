@@ -27,6 +27,9 @@ export const Tag = styled.div`
   border: 1px solid transparent;
   ${({ onClick }) => onClick && active}
   ${({ disabled }) => disabled && disabledStyle}
+  :hover {
+    z-index: 999;
+  }
   &:last-of-type {
     margin-right: 0;
   }

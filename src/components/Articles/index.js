@@ -15,7 +15,7 @@ export class Articles extends Component {
     columns: [],
     pageCount: 0,
     tags: [],
-    disabledTag: null,
+    selectedTags: null,
   };
 
   componentDidMount() {
@@ -35,15 +35,23 @@ export class Articles extends Component {
     this.setState({ tags: Array.from(tags) });
   };
 
-  setPagination = (disabledTag, currentPage = 1) => {
-    const { data, articlesPerPage } = this.props;
+  filtered = selectedTags => {
+    const { data } = this.props;
+
+    return data
+      ? data.filter(
+          ({ tags }) => selectedTags === null || selectedTags.some(tag => tags.includes(tag)),
+        )
+      : [];
+  };
+
+  setPagination = (selectedTags, currentPage = 1) => {
+    const { articlesPerPage } = this.props;
     const columnsCount = isMobile() ? 1 : 2;
 
-    const allArticles = data
-      ? data.filter(({ tags }) => disabledTag === null || tags.includes(disabledTag))
-      : [];
+    const allArticles = this.filtered(selectedTags);
 
-    const articles = this.pagination(currentPage, allArticles, disabledTag);
+    const articles = this.pagination(currentPage, allArticles);
     const pageCount = Math.ceil(allArticles.length / articlesPerPage);
     const columns = rowColumns(articles, columnsCount);
 
@@ -60,12 +68,9 @@ export class Articles extends Component {
   };
 
   onPageChange = currentPage => {
-    const { data } = this.props;
-    const { columnsCount, disabledTag } = this.state;
+    const { columnsCount, selectedTags } = this.state;
 
-    const allArticles = data
-      ? data.filter(({ tags }) => disabledTag === null || tags.includes(disabledTag))
-      : [];
+    const allArticles = this.filtered(selectedTags);
     const items = this.pagination(currentPage, allArticles);
     const columns = rowColumns(items, columnsCount);
 
@@ -76,24 +81,30 @@ export class Articles extends Component {
   };
 
   onTagClick = tag => {
-    const { disabledTag } = this.state;
+    const { selectedTags } = this.state;
 
-    if (disabledTag === tag) {
-      this.setState({ disabledTag: null, currentPage: 1 });
+    if (selectedTags && selectedTags.includes(tag)) {
+      this.setState({ selectedTags: selectedTags.filter(item => item !== tag), currentPage: 1 });
       this.setPagination(null);
     } else {
-      this.setState({ disabledTag: tag, currentPage: 1 });
-      this.setPagination(tag);
+      const newSelectedTags = selectedTags ? selectedTags.concat(tag) : [tag];
+
+      this.setState({
+        selectedTags: newSelectedTags,
+        currentPage: 1,
+      });
+
+      this.setPagination(newSelectedTags);
     }
   };
 
   render() {
-    const { columnsCount, columns, currentPage, pageCount, tags, disabledTag } = this.state;
+    const { columnsCount, columns, currentPage, pageCount, tags, selectedTags } = this.state;
     const { data } = this.props;
 
     return (
       <Container>
-        <Tags tags={tags} onClick={this.onTagClick} disabledTag={disabledTag} />
+        <Tags tags={tags} onClick={this.onTagClick} selectedTags={selectedTags} />
         <ColumnsContainer>
           {columns.map((col, index) => (
             <Column key={index} oneColumn={columnsCount === 1}>

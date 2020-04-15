@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-
 import { Polygon } from "react-leaflet";
+
 import { CountryTooltip, Flag } from "./styled";
 import color from "../../styles/colors";
 
