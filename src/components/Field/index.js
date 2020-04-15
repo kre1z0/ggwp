@@ -17,12 +17,10 @@ const getElement = value => {
   }
 };
 
-export const Field = React.memo(({ name, value, className, Icon }) => {
-  return (
-    <FieldContainer className={className}>
-      {Icon && <Icon />}
-      <Name withIcon={Icon}>{name}</Name>
-      {getElement(value)}
-    </FieldContainer>
-  );
-});
+export const Field = React.memo(({ name, value, className, Icon }) => (
+  <FieldContainer className={className}>
+    {Icon && <Icon />}
+    <Name withIcon={Icon}>{name}</Name>
+    {getElement(value)}
+  </FieldContainer>
+));

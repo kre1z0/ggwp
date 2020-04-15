@@ -21,43 +21,41 @@ const getComponent = (item, key) => {
   }
 };
 
-export const SimpleTable = ({ headers, data, cellWidth = [], className }) => {
-  return (
-    <Container className={className}>
-      <Table>
-        <thead>
-          <tr>
-            {headers.map((header, index) => (
-              <Th cellWidth={cellWidth[index]} key={`${header}-${index + 1}`} as="th">
-                {header}
-              </Th>
+export const SimpleTable = ({ headers, data, cellWidth = [], className }) => (
+  <Container className={className}>
+    <Table>
+      <thead>
+        <tr>
+          {headers.map((header, index) => (
+            <Th cellWidth={cellWidth[index]} key={`${header}-${index + 1}`} as="th">
+              {header}
+            </Th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((item, index) => (
+          <tr key={`project-table-row-${index + 1}`}>
+            {Object.keys(item).map((key, i) => (
+              <Td
+                first={i === 0}
+                key={`${key} tr-${index + 1} td-${i + 1}`}
+                cellWidth={cellWidth[i]}
+              >
+                {key === "description" ? (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: item[key],
+                    }}
+                  />
+                ) : (
+                  getComponent(item, key)
+                )}
+              </Td>
             ))}
           </tr>
-        </thead>
-        <tbody>
-          {data.map((item, index) => (
-            <tr key={`project-table-row-${index + 1}`}>
-              {Object.keys(item).map((key, i) => (
-                <Td
-                  first={i === 0}
-                  key={`${key} tr-${index + 1} td-${i + 1}`}
-                  cellWidth={cellWidth[i]}
-                >
-                  {key === "description" ? (
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: item[key],
-                      }}
-                    />
-                  ) : (
-                    getComponent(item, key)
-                  )}
-                </Td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    </Container>
-  );
-};
+        ))}
+      </tbody>
+    </Table>
+  </Container>
+);

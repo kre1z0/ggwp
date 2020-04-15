@@ -39,10 +39,7 @@ const Contacts = () => (
         <Telegram /> telegram
       </ContactLink>
     </ContactsLeftSide>
-    <ContactsRightSide>
-      CSS-архиепископ, гуру каскадного программирования. Это мой личный блог в котором я пишу на
-      любые темы.
-    </ContactsRightSide>
+    <ContactsRightSide>ggwp</ContactsRightSide>
   </ContactsBlock>
 );
 
@@ -55,7 +52,7 @@ const About = () => {
         </PhotoLink>
         {isMobile() && <Contacts />}
         <Fields>
-          <Field Icon={Developer} name="profession" value="GIS front-end developer" />
+          <Field Icon={Developer} name="profession" value="Front-end developer" />
           <Field Icon={People} name="company" value="Everpoint" />
           <Field Icon={Location} name="location" value="Ukraine, Khmelnytskyi" />
           <Field Icon={Github} name="github" value={github} />
@@ -65,9 +62,10 @@ const About = () => {
               "ES6",
               "typescript",
               "git",
-              "redux",
               "jest",
-              "npm",
+              "puppeteer",
+              "redux",
+              "d3",
               "webpack",
               "rollup",
               "lodash",
@@ -78,8 +76,6 @@ const About = () => {
               "gatsby",
               "styled-components",
               "netlify-cms",
-              "youtube api",
-              "twitch api",
             ]}
           />
         </Fields>

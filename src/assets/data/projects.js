@@ -1,5 +1,13 @@
 export default [
   {
+    name: "Бизнес-навигатор МСП",
+    repo: null,
+    demo: "https://navigator.smbn.ru",
+    skills: ["react.js", "redux", "chart.js", "puppeteer", "jest", "leaflet"],
+    description:
+      "Бесплатный сервис для предпринимателей. Найдите место для открытия бизнеса и получите типовой бизнес-план,  <a href='https://www.everpoint.ru/msp' target='_blank'>cтатья</a>.",
+  },
+  {
     name: "Корпоративный сайт",
     repo: "https://github.com/Everpoint/everpoint-site",
     demo: "https://www.everpoint.ru/",
@@ -24,14 +32,6 @@ export default [
     ],
     description:
       "UI-библиотека, <a href='https://vc.ru/design/58149-kak-my-iskali-gotovuyu-ui-biblioteku-no-v-itoge-sozdali-ee-sami' target='_blank'>cтатья</a>.",
-  },
-  {
-    name: "Бизнес-навигатор МСП",
-    repo: null,
-    demo: "https://navigator.smbn.ru",
-    skills: ["react.js", "redux", "chart.js", "jest", "leaflet"],
-    description:
-      "Бесплатный сервис для предпринимателей. Найдите место для открытия бизнеса и получите типовой бизнес-план,  <a href='https://www.everpoint.ru/msp' target='_blank'>cтатья</a>.",
   },
   {
     name: "Цветы 8 марта: как растет спрос и где не хватает магазинов",

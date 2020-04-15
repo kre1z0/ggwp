@@ -1,4 +1,4 @@
 export default [
   // { name: "map", to: "/map" },
-  { name: "about", to: "/about" },
+  { name: "Обо мне", to: "/about" },
 ];

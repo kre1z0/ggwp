@@ -68,7 +68,7 @@ const ControlBtn = styled(Button)`
     }
   }
 
-  &.disabled {
+  &[disabled] {
     pointer-events: none;
     cursor: default;
     svg {
